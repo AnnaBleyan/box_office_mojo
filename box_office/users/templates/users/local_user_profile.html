@@ -1,0 +1,52 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link rel="stylesheet" href="{% static 'home.css'%}">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+   <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@900&amp;display=swap" rel="stylesheet">
+</head>
+
+
+<div class="div">
+         <div class="topnav">
+             {% if not request.user.is_authenticated %}
+
+            <a class="active" href="{% url 'welcome'  %}">Home</a>
+            <a href="{%  url 'create_user' %}">Sign Up</a>
+            <a href="{%  url 'user_login' %}">Login</a>
+                 {% else %}
+                  <a class="active" href="{% url 'welcome'  %}">Home</a>
+             <br>
+             <br>
+              <br>
+             <a class="active" href="{% url 'scrap'  %}">View Movies</a>
+             <a href="{%  url 'user_logout' %}">Logout </a>
+
+
+
+             {% endif %}
+         </div>
+      </div>
+<body>
+
+ <h3>{{ user.username }}</h3>
+<div class="user_info">
+      </div>
+      <p><strong> Address: {{ profile.address }}</strong></p>
+		<p><strong> Age:  {{ profile.age }}</strong></p>
+		<p><strong> Additional information: {{ profile.additional_info }}</strong></p>
+		<p><strong> Registration date: {{ profile.registration_date }}</strong></p>
+
+   </div>
+</body>
+
+
+</html>

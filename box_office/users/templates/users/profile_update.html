@@ -1,0 +1,29 @@
+{% extends 'movie/newbase.html' %}
+
+{% block content %}
+
+<div class="center-column">
+
+
+	<div class="todo-list">
+	<h3>Profile</h3>
+{#        <a href="{% url 'user_logout' %}"><button class="btn btn-success" type="submit" name="Logout">Logout</button></a>#}
+		<form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+        <h2><strong> Address: {{ form.address }}</strong></h2>
+		<h2><strong> Age: {{ form.age }}</strong></h2>
+		<h2><strong> Additional information: {{ form.additional_info }}</strong></h2>
+
+        <input class="btn btn-info" type="submit" value="Save">
+
+		<br>
+		<br>
+    </form>
+	</div>
+</div>
+
+
+{% endblock content %}
+
+
+

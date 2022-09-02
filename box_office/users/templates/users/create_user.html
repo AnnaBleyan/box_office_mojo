@@ -1,0 +1,14 @@
+{% extends 'movie/newbase.html' %}
+
+{% block content %}
+    <div class="center-column">
+		<h3>New User</h3>
+		<form method="POST" >
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" name="Create User">
+	    </form>
+    </div>
+
+{% endblock content %}
+

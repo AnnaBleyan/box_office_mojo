@@ -1,0 +1,21 @@
+{% extends 'movie/user_profile_base.html' %}
+{% load static %}
+{% block content %}
+
+
+    <h3>{{ user.username }}</h3>
+<div class="user_info">
+      </div>
+      <p><strong> Address: {{ profile.address }}</strong></p>
+		<p><strong> Age:  {{ profile.age }}</strong></p>
+		<p><strong> Additional information: {{ profile.additional_info }}</strong></p>
+		<p><strong> Registration date: {{ profile.registration_date }}</strong></p>
+
+   </div>
+
+
+
+{% endblock content %}
+
+
+
